@@ -1,0 +1,80 @@
+[06/10/2016 11:43:22] a.rodilla.tierz: el html debe estar pelado, nada de data-intro ni llamadas a eventos, solo los identificadores y referencias neutras
+[06/10/2016 11:44:01] a.rodilla.tierz: debe ser el js principal el que modifique el html y cargue los eventos y gestiones para ver el tutorial
+[06/10/2016 11:45:08] a.rodilla.tierz: los html extras son ampliaciones del html principal que deberan cargarse en el principal programaticamente, es decir, sera js quien los cargue en el html principal por medio de un evento y una función asociada
+[06/10/2016 11:54:37] Jotetsu: y los html extras que deben contener, tan solo info nueva, nuevos contenedores sobre los cuales seguir el tutorial?
+[06/10/2016 11:56:30] a.rodilla.tierz: contenedores para seguir el tutorial
+[06/10/2016 12:48:29] a.rodilla.tierz: como lo llevas?
+[06/10/2016 12:56:26] Jotetsu: bueno estoy haciendo un poco de todo, haciendo los html y mirandome cosas de js
+[06/10/2016 12:58:11] a.rodilla.tierz: vale, pero ves subiendolo
+[06/10/2016 12:58:20] a.rodilla.tierz: que en breve me marchare y quiero hecharle un ojo
+[06/10/2016 12:58:43] a.rodilla.tierz: tu sube sin cortare y ya te indicare yo luego cosas a cambiar
+[06/10/2016 13:25:08] a.rodilla.tierz: no veo ninguna cambio
+[06/10/2016 13:25:17] a.rodilla.tierz: has sincronizado lo que has hecho con DropBox?
+[06/10/2016 13:25:43] Jotetsu: no
+[06/10/2016 13:25:45] Jotetsu: voy a ello
+[06/10/2016 13:25:49] Jotetsu: es q he hecho un html
+[06/10/2016 13:25:51] Jotetsu: para poder jugar
+[06/10/2016 13:26:00] Jotetsu: no es gran cosa, mañana me lio con el js
+[06/10/2016 13:28:47] a.rodilla.tierz: a ver
+[06/10/2016 13:37:47] a.rodilla.tierz: vale, me voy a marchar
+[06/10/2016 13:37:53] a.rodilla.tierz: pero antes te llamo y repasamos lo ue has hecho
+[06/10/2016 13:42:11] a.rodilla.tierz: estas?
+[06/10/2016 13:42:20] Jotetsu: si si
+[06/10/2016 13:42:25] Jotetsu: me llamas x aqui dices?
+[06/10/2016 13:42:26] a.rodilla.tierz: pues llamo
+[06/10/2016 13:42:37] Jotetsu: espera q enchufo cascos
+[06/10/2016 13:42:42] a.rodilla.tierz: si, videollamada por skype y comparticion de pantalla
+[06/10/2016 13:42:44] a.rodilla.tierz: ok
+[06/10/2016 13:43:20] Jotetsu: dale
+[06/10/2016 13:43:56] *** Llamada de a.rodilla.tierz ***
+[06/10/2016 13:44:16] a.rodilla.tierz: no me escuchas?
+[06/10/2016 13:44:26] a.rodilla.tierz: ???
+[06/10/2016 13:44:28] Jotetsu: no
+[06/10/2016 13:44:30] Jotetsu: y tu a mi?
+[06/10/2016 13:44:30] a.rodilla.tierz: yo te escucho perfectamente
+[06/10/2016 13:44:46] a.rodilla.tierz: no, pues mierda de micro
+[06/10/2016 13:44:57] a.rodilla.tierz: bueno no importa
+[06/10/2016 13:45:13] a.rodilla.tierz: comparte pantalla y enséñame tu código, please
+[06/10/2016 13:45:56] a.rodilla.tierz: no veo nada
+[06/10/2016 13:46:03] a.rodilla.tierz: creo que se pierde la conexion
+[06/10/2016 13:46:18] a.rodilla.tierz: te escucho pero creo que se corta
+[06/10/2016 13:46:57] a.rodilla.tierz: vale, ahora ya veo tu pantalla
+[06/10/2016 13:49:17] a.rodilla.tierz: vale, si, pero un par de cosas
+[06/10/2016 13:49:40] a.rodilla.tierz: 1º, quita los href, son vínculos que cargan y ahora no nos conbienen
+[06/10/2016 13:50:20] a.rodilla.tierz: 2º los html secundarios, no es que cambies de pagina a la otra, sino que en la pagina principal, se inyecta un trozo de html nuevo y pone en la misma pagina contenido nuevo
+[06/10/2016 13:50:36] a.rodilla.tierz: no, los href de vínculos, la importación de librerías y css la dejas
+[06/10/2016 13:51:00] a.rodilla.tierz: hay varias formas
+[06/10/2016 13:51:05] a.rodilla.tierz: pero parte a parte
+[06/10/2016 13:51:15] a.rodilla.tierz: ahora indicaciones para el .js principal
+[06/10/2016 13:51:40] a.rodilla.tierz: lo puedes lanzar con un document.on(‘ready’, yourfunction)
+[06/10/2016 13:52:00] a.rodilla.tierz: es decir cuando el documento DOM este listo ese evento saltara y podrás empezar a hacer cosas
+[06/10/2016 13:52:10] a.rodilla.tierz: hay varias formas de hacer eso, hecha un ojo a algunas
+[06/10/2016 13:52:13] a.rodilla.tierz: luego
+[06/10/2016 13:52:32] a.rodilla.tierz: puedes ir asociando los elementos del DOM a var de js
+[06/10/2016 13:52:56] a.rodilla.tierz: var foo = document.selectbyId(‘#TTTT’), o similares
+[06/10/2016 13:54:03] a.rodilla.tierz: luego ese foo lo puedes trabajar, asociando a eventos:
+foo.addEvend(‘click’, ypurfunction);
+o modificando sus propiedades:
+foo.attr= {‘data-intro’: xxxx};
+[06/10/2016 13:54:44] a.rodilla.tierz: también puedes importar ficheros externos de html con el .import e inyectarlo a elementos del DOM de la misma manera
+[06/10/2016 13:54:51] a.rodilla.tierz: una cosa
+[06/10/2016 13:55:15] a.rodilla.tierz: esto que he escrito es de memoria…. así que seguramente la nomenclatura esta mal, tendrás que mirarte un como se hacen exactamente esos metodos
+[06/10/2016 13:56:29] a.rodilla.tierz: bueno, todo en una variable no, empiezas arrancando una función de inicialización que asocie los elementos del DOM que quieres a variables con las que trabajar y luego sobre estas les vas poniendo eventos o modificaciones de propiedades según te interese
+[06/10/2016 13:57:06] a.rodilla.tierz: fíjate un poco y con mucha distancia en como hacemos los componentesKO y las boxes en Atta
+[06/10/2016 13:57:46] a.rodilla.tierz: se llama al js desde un inicalizador externo, luego se declaran las variables principales de trabajo y luego hay funciones para declarar los bindeos de interes
+[06/10/2016 13:58:07] a.rodilla.tierz: hasta hay lo tienes claro?
+[06/10/2016 13:59:20] a.rodilla.tierz: ???
+[06/10/2016 13:59:29] a.rodilla.tierz: jajajajajajaja
+[06/10/2016 13:59:30] a.rodilla.tierz: ok
+[06/10/2016 14:00:11] a.rodilla.tierz: naaa, tranqui
+[06/10/2016 14:00:22] a.rodilla.tierz: lo principal es pillar la secuencia de trabajo
+[06/10/2016 14:00:34] a.rodilla.tierz: y lo de las boxes y componentes en ata es facil de identificar
+[06/10/2016 14:01:03] a.rodilla.tierz: los boxes están en las forlder boxexxxxxx y los componentes en las de implementationyyyyyyyy
+[06/10/2016 14:01:57] a.rodilla.tierz: si, eso si, podrás ir siguiendo estas indicacióny ante dudas puntuales, el Oscar también podra echarte un cable
+[06/10/2016 14:02:02] a.rodilla.tierz: si tiene tiempo claro
+[06/10/2016 14:02:29] a.rodilla.tierz: o las pones por el skype, no te garantizo que las lea, pero si las leo te las resuelvo
+[06/10/2016 14:02:45] a.rodilla.tierz: ok, con esto ya tienes para hacer mañana cosas, nos vemos el lunes
+[06/10/2016 14:02:51] a.rodilla.tierz: jajaja, no te creas aveces miro cosas
+[06/10/2016 14:03:02] a.rodilla.tierz: ok, que vaya bien el finde
+[06/10/2016 14:03:05] a.rodilla.tierz: jajajaja
+[06/10/2016 14:03:07] a.rodilla.tierz: ok, dew
