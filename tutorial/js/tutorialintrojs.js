@@ -3,6 +3,19 @@ function showStaticContent() {
 	Generarpie();	
 	setNotificationPanelEvents();
 	setMagicEvents();
+	manageUserevents();
+	return 0;
+}
+
+function manageUserevents(){
+	document.getElementById("doInyection").addEventListener("click", inyectartexto1);
+	return 0;
+}
+
+
+function cleanManageUserevents(){
+	document.getElementById("doInyection").removeEventListener("click");
+	return 0;
 }
 
 function setMagicEvents() {
@@ -71,7 +84,7 @@ function Generarpie() {
 
 }
 
-function Inyectartexto1() {
+function inyectartexto1() {
 
 	var txt1 = document.getElementById("texto1");
 	if ( txt1 ) {
@@ -85,7 +98,7 @@ function Inyectartexto1() {
 
 }
 
-function Inyectartexto1() {
+function Inyectartexto2() {
 
 	var txt2 = document.getElementById("texto2");
 	if ( txt2 ) {
@@ -114,10 +127,6 @@ function Sobremi() {
 
 (function(){
 	window.addEventListener("load", showStaticContent);
-
-	
-
-
 })();
 
 
